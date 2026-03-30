@@ -73,12 +73,12 @@ export default function ContactPage() {
       {/* Atmospheric Baseline */}
       <div className="absolute bottom-12 left-6 sm:left-12 flex space-x-12 opacity-30">
         <div className="flex flex-col space-y-1">
-          <span className="text-[8px] uppercase tracking-[0.5em] font-bold">AGENCY</span>
-          <span className="text-[10px] uppercase tracking-[0.3em] font-medium">CREATIVE ARCHIVE INT.</span>
+          <span className="text-[8px] uppercase tracking-[0.5em] font-bold">Location / இடம்</span>
+          <span className="text-[10px] uppercase tracking-[0.3em] font-medium">Vavuniya, Sri Lanka</span>
         </div>
         <div className="flex flex-col space-y-1">
-          <span className="text-[8px] uppercase tracking-[0.5em] font-bold">DIRECT</span>
-          <span className="text-[10px] uppercase tracking-[0.3em] font-medium">DIRECTOR@PATTYMOORE.FILM</span>
+          <span className="text-[8px] uppercase tracking-[0.5em] font-bold">Email / மின்னஞ்சல்</span>
+          <span className="text-[10px] uppercase tracking-[0.3em] font-medium">Ilanthiraiyanfilm@gmail.com</span>
         </div>
       </div>
     </main>
