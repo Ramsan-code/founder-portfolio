@@ -1,8 +1,4 @@
 import type { NextConfig } from "next";
-import path from "node:path";
-
-// Loader path from orchids-visual-edits - use direct resolve to get the actual file
-const loaderPath = require.resolve('orchids-visual-edits/loader.js');
 
 const nextConfig: NextConfig = {
   images: {
@@ -17,20 +13,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  outputFileTracingRoot: path.resolve(__dirname, '../../'),
+  // outputFileTracingRoot intentionally removed:
+  // Setting this to path.resolve(__dirname, '../../') on Vercel escapes
+  // the sandbox root (/vercel/path0) causing a doubled path at runtime:
+  // /vercel/path0/vercel/path0/.next/routes-manifest.json (ENOENT)
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  turbopack: {
-    rules: {
-      "*.{jsx,tsx}": {
-        loaders: [loaderPath]
-      }
-    }
-  }
-} as NextConfig;
+};
 
 export default nextConfig;
