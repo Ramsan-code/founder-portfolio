@@ -14,7 +14,7 @@ export default function Home() {
           <HeroTypography 
             text="PATTY MOORE" 
             subtitle="FILM DIRECTOR // THE VISIONARY"
-            className="min-h-0 py-0"
+            className="min-h-0 pt-32 pb-20 sm:py-0"
           />
         </section>
 

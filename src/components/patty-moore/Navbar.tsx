@@ -104,62 +104,78 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 w-full z-50 px-6 sm:px-12 flex justify-between items-center transition-all duration-500 bg-background/80 backdrop-blur-sm border-b border-foreground/5",
-        scrolled ? "py-5" : "py-8"
-      )}
-    >
-      <Link
-        href="/"
-        className="text-xs uppercase tracking-[0.5em] font-black text-foreground"
-      >
-        P.MOORE
-      </Link>
-
-      {/* Desktop Links + Toggle */}
-      <div className="hidden md:flex items-center space-x-10">
-        {links.map((link) => (
-          <NavLink key={link.href} {...link} />
-        ))}
-        <ThemeToggle />
-      </div>
-
-      {/* Mobile: Toggle + Hamburger */}
-      <div className="md:hidden flex items-center space-x-4">
-        <ThemeToggle />
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-foreground"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-        >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
+    <>
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center space-y-12 md:hidden px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-[#F0F2F5] dark:bg-[#222222] flex flex-col items-center justify-center space-y-10 md:hidden px-6"
           >
-            {links.map((link) => (
-              <NavLink
-                key={link.href}
-                {...link}
-                variant="mobile"
-                onClick={() => setIsOpen(false)}
-              />
-            ))}
-            <div className="mt-8">
+            {/* Close Button in Overlay */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-8 right-6 sm:right-12 text-foreground p-2"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Menu Links */}
+            <div className="flex flex-col items-center space-y-8">
+              {links.map((link) => (
+                <NavLink
+                  key={link.href}
+                  {...link}
+                  variant="mobile"
+                  onClick={() => setIsOpen(false)}
+                />
+              ))}
+            </div>
+
+            {/* Optional: Theme Toggle at bottom of mobile menu */}
+            <div className="pt-10 flex flex-col items-center">
+              <span className="text-[10px] uppercase tracking-[0.4em] opacity-40 font-bold mb-4 block text-center">Appearance</span>
               <ThemeToggle />
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+
+      <nav
+        className={cn(
+          "fixed top-0 left-0 w-full z-50 px-6 sm:px-12 flex justify-between items-center transition-all duration-500 bg-background/80 backdrop-blur-sm border-b border-foreground/5",
+          scrolled ? "py-5" : "py-8"
+        )}
+      >
+        <Link
+          href="/"
+          className="text-xs uppercase tracking-[0.5em] font-black text-foreground"
+        >
+          P.MOORE
+        </Link>
+
+        {/* Desktop Links + Toggle */}
+        <div className="hidden md:flex items-center space-x-10">
+          {links.map((link) => (
+            <NavLink key={link.href} {...link} />
+          ))}
+          <ThemeToggle />
+        </div>
+
+        {/* Mobile: Toggle + Hamburger */}
+        <div className="md:hidden flex items-center space-x-4">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-foreground"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </nav>
+    </>
   );
 };

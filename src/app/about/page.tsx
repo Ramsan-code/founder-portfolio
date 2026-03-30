@@ -34,7 +34,7 @@ export default function AboutPage() {
         <HeroTypography
           text="DIRECTOR"
           subtitle="PATTY MOORE / BIOGRAPHY"
-          className="min-h-0 py-0"
+          className="min-h-0 pt-32 pb-8 sm:pb-12"
         />
       </section>
 
@@ -54,7 +54,7 @@ export default function AboutPage() {
       </section>
 
       {/* Metadata Grid */}
-      <div className="px-12 pb-32 transition-colors duration-500">
+      <div className="px-6 sm:px-12 pb-32 transition-colors duration-500">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
           <div className="flex flex-col space-y-4">
             <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Education</span>
