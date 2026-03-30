@@ -27,10 +27,10 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen selection:bg-off-white selection:text-charcoal transition-colors duration-1000">
+    <main className="min-h-screen selection:bg-foreground selection:text-background transition-colors duration-500">
       <Navbar />
 
-      <section className="bg-charcoal text-off-white min-h-[70vh] flex flex-col justify-center">
+      <section className="bg-primary text-primary-foreground min-h-[70vh] flex flex-col justify-center transition-colors duration-500">
         <HeroTypography 
           text="DIRECTOR" 
           subtitle="PATTY MOORE / BIOGRAPHY"
@@ -40,7 +40,7 @@ export default function AboutPage() {
 
       <ChiaroscuroDivider toTheme="light" height="h-32" />
 
-      <section className="bg-off-white text-charcoal py-32 px-6 sm:px-12">
+      <section className="bg-background text-foreground py-32 px-6 sm:px-12 transition-colors duration-500">
         <div className="max-w-4xl">
           <DataList 
             title="Narrative Pillars" 
@@ -51,7 +51,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="bg-off-white px-12 pb-32">
+      <div className="bg-background px-12 pb-32 transition-colors duration-500">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
           <div className="flex flex-col space-y-4">
             <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Education</span>

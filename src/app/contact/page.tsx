@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function ContactPage() {
   return (
-    <main className="relative min-h-screen bg-charcoal text-off-white overflow-hidden selection:bg-off-white selection:text-charcoal cursor-crosshair">
+    <main className="relative min-h-screen bg-background text-foreground overflow-hidden selection:bg-foreground selection:text-background cursor-crosshair transition-colors duration-500">
       <Navbar />
 
       <div className="pt-32 grid grid-cols-1 lg:grid-cols-2 min-h-screen">

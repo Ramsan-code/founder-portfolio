@@ -43,7 +43,7 @@ export default function AccoladesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-off-white text-charcoal">
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-500">
       <Navbar />
 
       <section className="pt-32 pb-12 flex flex-col items-center">

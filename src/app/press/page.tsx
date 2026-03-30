@@ -44,7 +44,7 @@ export default function PressPage() {
   ];
 
   return (
-    <main className="bg-charcoal text-off-white min-h-screen">
+    <main className="bg-background text-foreground min-h-screen transition-colors duration-500">
       <Navbar />
       
       <div className="pt-24 flex flex-col items-center">
