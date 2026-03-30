@@ -11,13 +11,13 @@ export default function ContactPage() {
     <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-foreground selection:text-background cursor-crosshair transition-colors duration-500">
       <Navbar />
 
-      <div className="pt-24 grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      <div className="pt-20 grid grid-cols-1 lg:grid-cols-2 min-h-screen">
         {/* Left Side: Cinematic Form */}
         <section className="flex flex-col justify-center px-6 sm:px-16 z-20 pb-20 lg:pb-0">
           <HeroTypography
             text="GET IN TOUCH"
             subtitle="INITIATE PROTOCOL"
-            className="min-h-0 pt-32 pb-8 sm:pb-12"
+            className="min-h-0 pt-16 pb-8 sm:pb-12"
           />
 
           <motion.form

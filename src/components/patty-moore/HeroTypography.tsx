@@ -28,12 +28,12 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   const charCount = text.replace(/\s/g, "").length;
 
   // Dynamically scale font so the text always fits on one line.
-  // Conservative scaling for mobile to prevent horizontal overflow.
+  // Conservative scaling for mobile and desktop split grids.
   const getFontSize = () => {
-    if (charCount <= 7) return "clamp(2.5rem, 14vw, 10rem)";   // e.g. "PRESS"
-    if (charCount <= 9) return "clamp(2rem, 12vw, 9rem)";    // e.g. "DIRECTOR"
-    if (charCount <= 11) return "clamp(1.75rem, 9vw, 8rem)";  // e.g. "GET IN TOUCH"
-    return "clamp(1.5rem, 8vw, 7rem)";                        // e.g. "PATTY MOORE"
+    if (charCount <= 7) return "clamp(2.5rem, 12vw, 8rem)";  // e.g. "PRESS"
+    if (charCount <= 9) return "clamp(2rem, 10vw, 7rem)";   // e.g. "DIRECTOR"
+    if (charCount <= 11) return "clamp(1.75rem, 8vw, 6rem)"; // e.g. "PATTY MOORE"
+    return "clamp(1.5rem, 6vw, 5rem)";                       // e.g. "SELECTED WORK"
   };
 
   const containerVariants = {

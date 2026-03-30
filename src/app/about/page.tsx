@@ -2,6 +2,7 @@ import React from "react";
 import { DataList } from "@/components/patty-moore/DataList";
 import { Navbar } from "@/components/patty-moore/Navbar";
 import { HeroTypography } from "@/components/patty-moore/HeroTypography";
+import Image from "next/image";
 
 export default function AboutPage() {
   const infoData = [
@@ -30,12 +31,40 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero — theme-aware: white/black in light, charcoal/white in dark */}
-      <section className="min-h-[70vh] flex flex-col justify-center transition-colors duration-500">
+      <section className="min-h-[40vh] flex flex-col justify-center transition-colors duration-500">
         <HeroTypography
           text="DIRECTOR"
           subtitle="PATTY MOORE / BIOGRAPHY"
-          className="min-h-0 pt-32 pb-8 sm:pb-12"
+          className="min-h-0 pt-24 pb-8"
         />
+      </section>
+
+      {/* Two-Column Bio Section */}
+      <section className="px-6 sm:px-12 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden">
+            <Image
+                src="/images/patty_moore_portrait.png"
+                alt="Patty Moore — Director Portrait"
+                fill
+                className="object-cover grayscale"
+                sizes="(max-width: 768px) 100vw, 448px"
+                priority
+            />
+          </div>
+          
+          <div className="max-w-xl space-y-6">
+            <p className="text-lg font-medium opacity-80 leading-relaxed italic">
+              "The camera is an instrument that teaches people how to see without a camera."
+            </p>
+            <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
+              Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. 
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Thin divider line instead of animated block */}
