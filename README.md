@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Patty Moore — Film Director Portfolio
 
-## Getting Started
+A high-fidelity, production-ready portfolio for film director Patty Moore, built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
 
-First, run the development server:
+The design embodies the **"Auteur Theory"**—positioning Patty Moore as a visionary master of atmospheric thrillers through extreme restraint and surgical control.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📐 Design Philosophy: Minimalism Equals Confidence
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Every design decision removes clutter to communicate seriousness, profundity, and cinematic tension.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Monochromatic Chiaroscuro Palette**: Slate Grey (`#5C5C5C`), Charcoal (`#222222`), and Off-White (`#F0F2F5`).
+- **Typography**: Single monolithic Neo-Grotesque font family (Geist Sans). Hierarchy is built through scale, weight, and tracking only.
+- **Atmosphere**: No borders, dropshadows, or gradients. Visual texture is derived entirely from desaturated photography and typographic rhythm.
+- **Cinematic Pacing**: Background color transitions between dark and light sections mimic film cuts and lighting shifts.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Project Structure
 
-## Learn More
+- `src/components/patty-moore/`: Custom high-fidelity component library.
+  - `HeroTypography.tsx`: Staggered letter-spacing reveal for hero titles.
+  - `ChiaroscuroDivider.tsx`: Scroll-animated section transitions.
+  - `GridGallery.tsx`: Swiss-style archival grid for work and press.
+  - `DataList.tsx`: High-density informational disclosures.
+  - `Navbar.tsx`: Minimalist navigation with blend-mode contrast.
+- `src/app/`: App Router structure with dedicated pages:
+  - `Home`: Split-screen hero experience.
+  - `Work`: Archival film catalog.
+  - `About`: Narrative biography and vision.
+  - `Accolades`: Awards index with progressive unveils.
+  - `Press`: Media clipping index.
+  - `Contact`: Communiqué portal with cinematic wide-shot.
+- `public/images/`: Optimized cinematic placeholders generated with high-contrast noir aesthetic.
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Launch Dev Server**:
+    ```bash
+    npm run dev
+    ```
 
-## Deploy on Vercel
+3.  **Explore the Demo**:
+    Visit [/demo](http://localhost:3000/demo) for a component-level architectural showcase.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📽️ Design Specification
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Animation timing is restrained and purposeful (`ease-out`, `cubic-bezier`). Respect for `prefers-reduced-motion` is prioritized. The grid is sacred; alignment is maintained rigorously across all breakpoints.
