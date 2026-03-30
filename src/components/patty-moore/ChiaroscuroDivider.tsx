@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 interface ChiaroscuroDividerProps {
   toTheme: "dark" | "light";
@@ -13,8 +14,9 @@ interface ChiaroscuroDividerProps {
 /**
  * ChiaroscuroDivider Component
  *
- * Creates cinematic transitions between sections as the page scrolls.
- * Reads CSS variables at runtime so it responds correctly to the theme toggle.
+ * Creates a cinematic scroll-driven color transition between sections.
+ * - Dark mode: stays charcoal throughout (hero → charcoal content, seamless)
+ * - Light mode: animates charcoal → white (cinematic illumination effect)
  */
 export const ChiaroscuroDivider: React.FC<ChiaroscuroDividerProps> = ({
   toTheme,
@@ -22,31 +24,31 @@ export const ChiaroscuroDivider: React.FC<ChiaroscuroDividerProps> = ({
   className,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { resolvedTheme } = useTheme();
 
-  // Read current resolved CSS variable colors at mount time
-  const [colors, setColors] = useState({ bg: "#222222", fg: "#F0F2F5" });
-
-  useEffect(() => {
-    const style = getComputedStyle(document.documentElement);
-    const primary = style.getPropertyValue("--color-charcoal").trim() || "#222222";
-    const offWhite = style.getPropertyValue("--color-off-white").trim() || "#F0F2F5";
-    setColors({ bg: primary, fg: offWhite });
-  }, []);
+  const charcoal = "#222222"; // always-dark hero color
+  const white = "#ffffff";   // pure white for light mode content sections
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  const charcoal = "#222222";
-  const offWhite = "#F0F2F5";
+  // Dark mode: no transition — hero (charcoal) blends into dark content (charcoal)
+  // Light mode: animate the cinematic charcoal → white shift
+  const isDark = resolvedTheme === "dark";
+
+  const colorStops =
+    isDark
+      ? [charcoal, charcoal, charcoal, charcoal] // dark mode: seamless charcoal
+      : toTheme === "light"
+        ? [charcoal, charcoal, white, white]       // light mode: dark hero → white content
+        : [white, white, charcoal, charcoal];      // reverse (not used on About page)
 
   const backgroundColor = useTransform(
     scrollYProgress,
     [0.4, 0.45, 0.55, 0.6],
-    toTheme === "dark"
-      ? [offWhite, offWhite, charcoal, charcoal] // To Dark
-      : [charcoal, charcoal, offWhite, offWhite]  // To Light
+    colorStops
   );
 
   const springBg = useSpring(backgroundColor, {

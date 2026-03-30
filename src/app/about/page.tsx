@@ -2,7 +2,6 @@ import React from "react";
 import { DataList } from "@/components/patty-moore/DataList";
 import { Navbar } from "@/components/patty-moore/Navbar";
 import { HeroTypography } from "@/components/patty-moore/HeroTypography";
-import { ChiaroscuroDivider } from "@/components/patty-moore/ChiaroscuroDivider";
 
 export default function AboutPage() {
   const infoData = [
@@ -27,31 +26,35 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen selection:bg-foreground selection:text-background transition-colors duration-500">
+    <main className="min-h-screen bg-white text-black dark:bg-charcoal dark:text-off-white transition-colors duration-500 selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
       <Navbar />
 
-      <section className="bg-primary text-primary-foreground min-h-[70vh] flex flex-col justify-center transition-colors duration-500">
-        <HeroTypography 
-          text="DIRECTOR" 
+      {/* Hero — theme-aware: white/black in light, charcoal/white in dark */}
+      <section className="min-h-[70vh] flex flex-col justify-center transition-colors duration-500">
+        <HeroTypography
+          text="DIRECTOR"
           subtitle="PATTY MOORE / BIOGRAPHY"
           className="min-h-0 py-0"
         />
       </section>
 
-      <ChiaroscuroDivider toTheme="light" height="h-32" />
+      {/* Thin divider line instead of animated block */}
+      <div className="w-full border-t border-black/10 dark:border-white/10" />
 
-      <section className="bg-background text-foreground py-32 px-6 sm:px-12 transition-colors duration-500">
+      {/* Narrative Pillars */}
+      <section className="py-32 px-6 sm:px-12 transition-colors duration-500">
         <div className="max-w-4xl">
-          <DataList 
-            title="Narrative Pillars" 
-            items={infoData} 
+          <DataList
+            title="Narrative Pillars"
+            items={infoData}
             columns={1}
             className="p-0"
           />
         </div>
       </section>
 
-      <div className="bg-background px-12 pb-32 transition-colors duration-500">
+      {/* Metadata Grid */}
+      <div className="px-12 pb-32 transition-colors duration-500">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
           <div className="flex flex-col space-y-4">
             <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Education</span>
@@ -66,7 +69,7 @@ export default function AboutPage() {
           <div className="flex flex-col space-y-4">
             <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Status</span>
             <p className="text-sm font-bold uppercase tracking-widest">Active Development</p>
-            <p className="text-xs opacity-60">Next project: "Vortex" // 2026</p>
+            <p className="text-xs opacity-60">Next project: &quot;Vortex&quot; // 2026</p>
           </div>
         </div>
       </div>
