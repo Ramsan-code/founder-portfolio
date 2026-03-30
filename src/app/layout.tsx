@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Patty Moore — Film Director",
-  description: "Portfolio of Patty Moore, award-winning film director specializing in psychological thrillers.",
+  title: "Ilanthiraiyan — Filmmaker",
+  description: "Official portfolio of Ilanthiraiyan, filmmaker, storyteller, and catalyst for Eezham Cinema.",
 };
 
 export default function RootLayout({

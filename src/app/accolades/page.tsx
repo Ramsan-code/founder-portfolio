@@ -7,38 +7,38 @@ export default function AccoladesPage() {
   const awards = [
     {
       id: "1",
-      label: "Cannes Film Festival",
-      value: "Grand Prix du Jury",
+      label: "Independent Narrative Awards",
+      value: "Best Director",
       metadata: "2024",
-      description: "Awarded for exceptional visionary direction and atmospheric storytelling in 'The Silent Watcher'.",
+      description: "Recognized for exceptional visionary direction and atmospheric storytelling in 'Shadows of the Soil'.",
     },
     {
       id: "2",
-      label: "Sundance",
-      value: "Best Director",
+      label: "Cultural Heritage Grants",
+      value: "Creative Production Grant",
       metadata: "2023",
-      description: "Recognized for breaking conventional narrative structures in independent cinema.",
+      description: "Awarded for the preservation of oral histories through cinematic storytelling.",
     },
     {
       id: "3",
-      label: "BAFTA",
-      value: "Outstanding Debut",
-      metadata: "2022",
-      description: "Honored for the unique visual language established in early short works.",
+      label: "Tamil Film Festival",
+      value: "Emerging Voice Award",
+      metadata: "2023",
+      description: "Honored for the unique visual language established in early short works and community building.",
     },
     {
       id: "4",
-      label: "Berlinale",
-      value: "Silver Bear",
-      metadata: "2021",
-      description: "Atmospheric Achievement in 'Noir Echoes'.",
+      label: "Storytellers Workshop",
+      value: "Innovation in Narrative",
+      metadata: "2022",
+      description: "Recognized for breaking conventional documentary structures in postwar explorations.",
     },
     {
       id: "5",
-      label: "Locarno",
-      value: "Special Prize",
-      metadata: "2020",
-      description: "Creative Innovation Grant.",
+      label: "Creative Activism Summit",
+      value: "Catalyst Award",
+      metadata: "2021",
+      description: "Honored for building sustainable film ecosystems via Thiraippaasarai.",
     },
   ];
 
@@ -66,17 +66,17 @@ export default function AccoladesPage() {
           </div>
           
           <div className="hidden lg:flex flex-col space-y-24 mt-32">
-             <div className="flex flex-col space-y-8">
-               <span className="text-[80px] font-black leading-none opacity-5 tracking-tighter uppercase line-clamp-1">LAUREL WREATHS</span>
-               <div className="border-l-2 border-charcoal pl-8 py-4">
-                 <p className="text-sm uppercase tracking-[0.3em] font-bold">Selected Industry Recognition from Cannes, Sundance, BAFTA, Berlinale, and Locarno International Film Festivals.</p>
-               </div>
-             </div>
-             
-             <div className="flex flex-col space-y-8 opacity-40">
-               <span className="text-[120px] font-black leading-none tracking-tighter uppercase select-none pointer-events-none">archive.</span>
-               <p className="text-[10px] uppercase tracking-[0.6em] font-medium leading-relaxed">Each accolade is a testament to the rigorous discipline of Swiss-style archival cinema and the pursuit of narrative purity.</p>
-             </div>
+              <div className="flex flex-col space-y-8">
+                <span className="text-[80px] font-black leading-none opacity-5 tracking-tighter uppercase line-clamp-1">LAUREL WREATHS</span>
+                <div className="border-l-2 border-charcoal pl-8 py-4">
+                  <p className="text-sm uppercase tracking-[0.3em] font-bold">Selected Industry Recognition from Independent Film Forums, Cultural Heritage Grants, and International Narrative Workshops.</p>
+                </div>
+              </div>
+              
+              <div className="flex flex-col space-y-8 opacity-40">
+                <span className="text-[120px] font-black leading-none tracking-tighter uppercase select-none pointer-events-none">archive.</span>
+                <p className="text-[10px] uppercase tracking-[0.6em] font-medium leading-relaxed">Each accolade is a testament to the rigorous discipline of archival storytelling and the pursuit of narrative purity within the Eezham context.</p>
+              </div>
           </div>
         </div>
       </section>

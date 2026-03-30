@@ -7,22 +7,22 @@ import Image from "next/image";
 export default function AboutPage() {
   const infoData = [
     {
-      id: "bio",
-      label: "Biography",
-      value: "Auteur Theory",
-      description: "Patty Moore is a film director specializing in psychological thrillers. Her work is characterized by extreme restraint, desaturated palettes, and an obsessive focus on atmospheric tension. Positioning cinema as a documented record of the subconscious, Moore removes all decorative layers to expose the raw mechanics of suspense.",
+      id: "authenticity",
+      label: "Authentic Storytelling",
+      value: "உண்மைத்தன்மை",
+      description: "A commitment to narratives that originate from within the community, reflecting lived experiences through raw, atmospheric storytelling without external compromise.",
     },
     {
-      id: "approach",
-      label: "The Approach",
-      value: "Chiaroscuro Cinema",
-      description: "Every frame is a study in high contrast. By utilizing sharp lighting shifts and monochromatic environments, viewers are forced to engage with the spatial rhythm of the scene rather than just the narrative.",
+      id: "innovation",
+      label: "Cinematic Innovation",
+      value: "சினிமா நுட்பம்",
+      description: "Integrating contemporary filmmaking techniques with traditional narrative structures to create a unique Eezham cinematic aesthetic that honors the past and future.",
     },
     {
-      id: "vision",
-      label: "Vision",
-      value: "The Archive",
-      description: "Moore views her filmography not as a product, but as an archival vault. Each project is a documented history of a specific psychological state, maintained with strict alignment and Swiss-style precision.",
+      id: "movement",
+      label: "Creative Activism",
+      value: "கலைவழிச் செயல்பாடு",
+      description: "Using film as a tool for community empowerment, education, and fostering a sustainable local film ecosystem through mentorship and collaboration.",
     },
   ];
 
@@ -33,8 +33,8 @@ export default function AboutPage() {
       {/* Hero — theme-aware: white/black in light, charcoal/white in dark */}
       <section className="min-h-[40vh] flex flex-col justify-center transition-colors duration-500">
         <HeroTypography
-          text="DIRECTOR"
-          subtitle="PATTY MOORE / BIOGRAPHY"
+          text="THE VISIONARY"
+          subtitle="ILANTHIRAIYAN / BIOGRAPHY"
           className="min-h-0 pt-24 pb-8"
         />
       </section>
@@ -45,7 +45,7 @@ export default function AboutPage() {
           <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden">
             <Image
                 src="/images/patty_moore_portrait.png"
-                alt="Patty Moore — Director Portrait"
+                alt="Ilanthiraiyan — Director Portrait"
                 fill
                 className="object-cover grayscale"
                 sizes="(max-width: 768px) 100vw, 448px"
@@ -58,10 +58,10 @@ export default function AboutPage() {
               "The camera is an instrument that teaches people how to see without a camera."
             </p>
             <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Ilanthiraiyan is a filmmaker rooted in the soil of Vavuniya, Sri Lanka, whose work serves as a vital bridge between the historical narratives of the Tamil people and the expansive possibilities of modern cinema. His journey is defined by a dual commitment: the pursuit of artistic excellence and the necessity of community building. 
             </p>
             <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
-              Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. 
+              Growing up in a landscape rich with untold stories, he recognized early on that cinema is the most potent mirror for a community’s identity. His work does not merely observe; it participates in the cultural resilience of the Eezham context. By blending the raw, atmospheric tension of independent cinema with the deep-rooted oral traditions of his heritage, he creates a cinematic language that is both hyper-local and universally resonant.
             </p>
           </div>
         </div>
@@ -86,19 +86,19 @@ export default function AboutPage() {
       <div className="px-6 sm:px-12 pb-32 transition-colors duration-500">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
           <div className="flex flex-col space-y-4">
-            <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Education</span>
-            <p className="text-sm font-bold uppercase tracking-widest">Berlin Academy of Film</p>
-            <p className="text-xs opacity-60">Master of Fine Arts // 2018</p>
+            <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Associations</span>
+            <p className="text-sm font-bold uppercase tracking-widest">NewBorn Cinema / Thiraippaasarai</p>
+            <p className="text-xs opacity-60">Founder & Co-Founder</p>
           </div>
           <div className="flex flex-col space-y-4">
             <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Base</span>
-            <p className="text-sm font-bold uppercase tracking-widest">Los Angeles / Berlin</p>
+            <p className="text-sm font-bold uppercase tracking-widest">Vavuniya, Sri Lanka</p>
             <p className="text-xs opacity-60">Global representation</p>
           </div>
           <div className="flex flex-col space-y-4">
-            <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Status</span>
-            <p className="text-sm font-bold uppercase tracking-widest">Active Development</p>
-            <p className="text-xs opacity-60">Next project: &quot;Vortex&quot; // 2026</p>
+            <span className="text-[10px] uppercase tracking-[0.5em] font-black opacity-30">Ongoing</span>
+            <p className="text-sm font-bold uppercase tracking-widest">Archive of Resilience</p>
+            <p className="text-xs opacity-60">Latest project: "Shadows of the Soil" // 2024</p>
           </div>
         </div>
       </div>

@@ -6,38 +6,38 @@ import { HeroTypography } from "@/components/patty-moore/HeroTypography";
 export default function WorkPage() {
   const films = [
     {
-      title: "The Silent Watcher",
-      metadata: "Feature Film / 2024 / Psychological Thriller",
+      title: "Shadows of the Soil",
+      metadata: "Feature Film / 2024 / Narrative",
       imageSrc: "/images/work-1.png",
       aspectRatio: "video" as const,
     },
     {
-      title: "Noir Echoes",
-      metadata: "Short Film / 2023 / Neo-Noir",
+      title: "The Echo of Vavuniya",
+      metadata: "Short Film / 2023 / Atmospheric",
       imageSrc: "/images/work-2.png",
       aspectRatio: "video" as const,
     },
     {
-      title: "Shadow Protocol",
-      metadata: "Commercial / 2023 / Atmospheric",
+      title: "Resilience in Frame",
+      metadata: "Documentary / 2023 / Cultural",
       imageSrc: "/images/work-3.png",
       aspectRatio: "video" as const,
     },
     {
-      title: "Midnight Call",
+      title: "Ancestral Whispers",
       metadata: "Experimental / 2022 / Digital",
       imageSrc: "/images/work-1.png",
       aspectRatio: "video" as const,
     },
     {
-      title: "Vortex",
-      metadata: "Music Video / 2021 / Cinematic",
+      title: "The Silent Watcher",
+      metadata: "Short Film / 2021 / Cinematic",
       imageSrc: "/images/work-2.png",
       aspectRatio: "video" as const,
     },
     {
-      title: "Archival 01",
-      metadata: "Documentary / 2020 / Analog",
+      title: "Eezham Origins",
+      metadata: "Archival / 2020 / Analog",
       imageSrc: "/images/work-3.png",
       aspectRatio: "video" as const,
     },
@@ -50,7 +50,7 @@ export default function WorkPage() {
       <div className="pt-24 flex flex-col items-center">
         <HeroTypography 
           text="SELECTED WORK" 
-          subtitle="A catalog of documented shadows."
+          subtitle="A living archive of Eezham cinema."
           className="min-h-0 py-20"
         />
         

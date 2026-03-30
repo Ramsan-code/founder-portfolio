@@ -12,8 +12,8 @@ export default function Home() {
         {/* Left Side: Typography */}
         <section className="flex flex-col justify-center px-6 sm:px-16 z-20">
           <HeroTypography 
-            text="PATTY MOORE" 
-            subtitle="FILM DIRECTOR // THE VISIONARY"
+            text="ILANTHIRAIYAN" 
+            subtitle="FILMMAKER // STORYTELLER // CATALYST"
             className="min-h-0 pt-24 pb-20 sm:pt-16 sm:pb-0"
           />
         </section>
@@ -39,7 +39,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col space-y-1">
           <span className="text-[8px] uppercase tracking-[0.5em] font-bold">LOCATION</span>
-          <span className="text-[10px] uppercase tracking-[0.3em] font-medium">LOS ANGELES / BERLIN</span>
+          <span className="text-[10px] uppercase tracking-[0.3em] font-medium">VAVUNIYA, SRI LANKA</span>
         </div>
       </div>
     </main>

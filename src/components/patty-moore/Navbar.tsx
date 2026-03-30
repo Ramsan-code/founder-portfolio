@@ -153,7 +153,7 @@ export const Navbar: React.FC = () => {
           href="/"
           className="text-xs uppercase tracking-[0.5em] font-black text-foreground"
         >
-          P.MOORE
+          ILANTHIRAIYAN
         </Link>
 
         {/* Desktop Links + Toggle */}

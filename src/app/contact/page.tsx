@@ -16,7 +16,7 @@ export default function ContactPage() {
         <section className="flex flex-col justify-center px-6 sm:px-16 z-20 pb-20 lg:pb-0">
           <HeroTypography
             text="GET IN TOUCH"
-            subtitle="INITIATE PROTOCOL"
+            subtitle="LET'S CREATE TOGETHER"
             className="min-h-0 pt-16 pb-8 sm:pb-12"
           />
 
@@ -59,7 +59,7 @@ export default function ContactPage() {
             </div>
 
             <button className="pt-8 sm:pt-12 text-xs sm:text-sm uppercase tracking-[0.5em] sm:tracking-[1em] font-black hover:opacity-50 transition-opacity">
-              SEND COMMUNIQUÉ
+              INITIATE COLLABORATION
             </button>
           </motion.form>
 
