@@ -35,7 +35,7 @@ export default function AboutPage() {
         <HeroTypography
           text="THE VISIONARY"
           subtitle="ILANTHIRAIYAN / BIOGRAPHY"
-          className="min-h-0 pt-24 pb-8"
+          className="min-h-0 pb-8"
         />
       </section>
 

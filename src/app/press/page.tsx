@@ -47,7 +47,7 @@ export default function PressPage() {
     <main className="bg-background text-foreground min-h-screen transition-colors duration-500">
       <Navbar />
       
-      <div className="pt-24 flex flex-col items-center">
+      <div className="flex flex-col items-center">
         <HeroTypography 
           text="PRESS INDEX" 
           subtitle="ARCHIVAL MEDIA CLIPPINGS"

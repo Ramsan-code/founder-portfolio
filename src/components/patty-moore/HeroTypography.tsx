@@ -30,10 +30,11 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   // Dynamically scale font so the text always fits on one line.
   // Conservative scaling for mobile and desktop split grids.
   const getFontSize = () => {
-    if (charCount <= 7) return "clamp(2.5rem, 12vw, 8rem)";  // e.g. "PRESS"
-    if (charCount <= 9) return "clamp(2rem, 10vw, 7rem)";   // e.g. "DIRECTOR"
-    if (charCount <= 11) return "clamp(1.75rem, 8vw, 6rem)"; // e.g. "PATTY MOORE"
-    return "clamp(1.5rem, 6vw, 5rem)";                       // e.g. "SELECTED WORK"
+    // Mobile-first conservative scaling
+    if (charCount <= 7) return "clamp(2.5rem, 10vw, 8rem)";  // e.g. "PRESS"
+    if (charCount <= 9) return "clamp(2rem, 8vw, 7rem)";    // e.g. "DIRECTOR"
+    if (charCount <= 11) return "clamp(1.5rem, 7vw, 6rem)"; // e.g. "PATTY MOORE"
+    return "clamp(1.2rem, 5vw, 5rem)";                       // e.g. "SELECTED WORK"
   };
 
   const containerVariants = {
@@ -50,12 +51,12 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   const charVariants = {
     hidden: {
       opacity: 0,
-      letterSpacing: "0.5em",
+      letterSpacing: "0.2em", // Reduced from 0.5em to prevent extreme initial width
       filter: "blur(4px)",
     },
     visible: {
       opacity: 1,
-      letterSpacing: "-0.02em",
+      letterSpacing: "-0.01em", // Slightly less tight for better legibility
       filter: "blur(0px)",
       transition: {
         duration: 0.8,
@@ -80,7 +81,7 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   return (
     <div
       className={cn(
-        "flex flex-col justify-center min-h-[50vh] py-20 px-4 sm:px-12 w-full max-w-full overflow-hidden",
+        "flex flex-col justify-center min-h-[40vh] pt-32 sm:pt-40 pb-20 px-4 sm:px-12 w-full max-w-full overflow-hidden",
         className
       )}
     >
@@ -88,11 +89,11 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative w-full overflow-hidden"
+        className="relative w-full max-w-full overflow-hidden"
       >
         {/* whitespace-nowrap + overflow-hidden prevents wrapping at any width */}
         <Component
-          className="font-black leading-[0.85] uppercase whitespace-nowrap overflow-hidden w-full"
+          className="font-black leading-[0.85] uppercase whitespace-nowrap overflow-hidden w-full block"
           style={{ fontSize: getFontSize() }}
         >
           {characters.map((char, index) => (

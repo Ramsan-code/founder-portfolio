@@ -158,7 +158,7 @@ export const Navbar: React.FC = () => {
             src="/images/Kishanth Logo-01.png"
             alt="Ilanthiraiyan Logo"
             fill
-            className="object-contain"
+            className="object-contain dark:mix-blend-normal mix-blend-multiply transition-colors"
             priority
           />
         </Link>
@@ -172,14 +172,14 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile: Toggle + Hamburger */}
-        <div className="md:hidden flex items-center space-x-4">
+        <div className="md:hidden flex items-center space-x-8">
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-foreground"
+            className="text-foreground p-2 -mr-2"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>

@@ -8,13 +8,13 @@ export default function Home() {
     <main className="relative min-h-screen bg-background text-foreground overflow-hidden selection:bg-foreground selection:text-background cursor-crosshair transition-colors duration-500">
       <Navbar />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen pt-24 sm:pt-0">
         {/* Left Side: Typography */}
         <section className="flex flex-col justify-center px-6 sm:px-16 z-20">
           <HeroTypography 
             text="ILANTHIRAIYAN" 
             subtitle="FILMMAKER // STORYTELLER // CATALYST for Eezham Cinema "
-            className="min-h-0 pt-24 pb-20 sm:pt-16 sm:pb-0"
+            className="min-h-0 pt-32 pb-20 sm:pt-16 sm:pb-0"
           />
         </section>
 
@@ -31,8 +31,8 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Atmospheric Baseline */}
-      <div className="absolute bottom-12 left-6 sm:left-12 flex space-x-12 opacity-30">
+      {/* Atmospheric Baseline — responsive positioning */}
+      <div className="relative md:absolute bottom-0 md:bottom-12 left-0 md:left-12 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-12 opacity-30 px-6 lg:px-16 py-12 md:py-0 bg-background md:bg-transparent">
         <div className="flex flex-col space-y-1">
           <span className="text-[8px] uppercase tracking-[0.5em] font-bold">EST. 2018</span>
           <span className="text-[10px] uppercase tracking-[0.3em] font-medium">ARCHIVE INDEX NO. 248</span>

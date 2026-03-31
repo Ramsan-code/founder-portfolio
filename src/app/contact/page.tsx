@@ -27,7 +27,7 @@ export default function ContactPage() {
             className="w-full max-w-md space-y-8 sm:space-y-12 px-4 sm:px-0"
           >
             <div className="flex flex-col space-y-3">
-              <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-40">
+              <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-70">
                 Your Name
               </label>
               <input
@@ -38,7 +38,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-col space-y-3">
-              <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-40">
+              <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-70">
                 Your Email Address
               </label>
               <input
@@ -49,7 +49,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-col space-y-3">
-              <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-40">
+              <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-70">
                 Message
               </label>
               <textarea
@@ -94,8 +94,8 @@ export default function ContactPage() {
         </section>
       </div>
 
-      {/* Desktop-only absolute baseline */}
-      <div className="hidden lg:flex absolute bottom-12 left-6 sm:left-12 space-x-12 opacity-30">
+      {/* Desktop-only absolute baseline — aligned with main section padding */}
+      <div className="hidden lg:flex absolute bottom-12 left-6 sm:left-16 space-x-12 opacity-30">
         <div className="flex flex-col space-y-1">
           <span className="text-[8px] uppercase tracking-[0.5em] font-bold">Location / இடம்</span>
           <span className="text-[10px] uppercase tracking-[0.3em] font-medium">Vavuniya, Sri Lanka</span>
