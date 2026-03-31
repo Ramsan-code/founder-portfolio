@@ -21,10 +21,10 @@ export default function Home() {
         {/* Right Side: Cinematic Image */}
         <section className="relative h-[60vh] md:h-screen w-full overflow-hidden">
           <Image
-            src="/images/work-1.png"
-            alt="Director vision"
+            src="/images/patty_moore_portrait.png"
+            alt="Ilanthiraiyan — Director Portrait"
             fill
-            className="object-cover grayscale brightness-50 opacity-70"
+            className="object-cover object-top grayscale contrast-[1.1]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-transparent to-transparent hidden md:block" />

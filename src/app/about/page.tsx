@@ -39,30 +39,34 @@ export default function AboutPage() {
         />
       </section>
 
-      {/* Two-Column Bio Section */}
-      <section className="px-6 sm:px-12 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden">
+      {/* Bio Section with Portrait */}
+      <section className="px-6 sm:px-12 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch max-w-7xl mx-auto">
+          {/* Left Side: Portrait — More prominent */}
+          <div className="relative w-full min-h-[500px] lg:min-h-[800px] overflow-hidden rounded-sm grayscale contrast-[1.1]">
             <Image
-                src="/images/patty_moore_portrait.png"
-                alt="Ilanthiraiyan — Director Portrait"
-                fill
-                className="object-cover grayscale"
-                sizes="(max-width: 768px) 100vw, 448px"
-                priority
+              src="/images/patty_moore_portrait.png"
+              alt="Ilanthiraiyan — Director Portrait"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
             />
           </div>
-          
-          <div className="max-w-xl space-y-6">
-            <p className="text-lg font-medium opacity-80 leading-relaxed italic">
+
+          {/* Right Side: Narrative Content */}
+          <div className="flex flex-col justify-center space-y-12">
+            <p className="text-2xl sm:text-3xl font-medium opacity-90 leading-relaxed italic border-l-2 border-black/10 dark:border-white/10 pl-8">
               "The camera is an instrument that teaches people how to see without a camera."
             </p>
-            <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
-              Ilanthiraiyan is a filmmaker rooted in the soil of Vavuniya, Sri Lanka, whose work serves as a vital bridge between the historical narratives of the Tamil people and the expansive possibilities of modern cinema. His journey is defined by a dual commitment: the pursuit of artistic excellence and the necessity of community building. 
-            </p>
-            <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
-              Growing up in a landscape rich with untold stories, he recognized early on that cinema is the most potent mirror for a community’s identity. His work does not merely observe; it participates in the cultural resilience of the Eezham context. By blending the raw, atmospheric tension of independent cinema with the deep-rooted oral traditions of his heritage, he creates a cinematic language that is both hyper-local and universally resonant.
-            </p>
+            <div className="space-y-8">
+              <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
+                Ilanthiraiyan is a filmmaker rooted in the soil of Vavuniya, Sri Lanka, whose work serves as a vital bridge between the historical narratives of the Tamil people and the expansive possibilities of modern cinema. His journey is defined by a dual commitment: the pursuit of artistic excellence and the necessity of community building. 
+              </p>
+              <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
+                Growing up in a landscape rich with untold stories, he recognized early on that cinema is the most potent mirror for a community’s identity. His work does not merely observe; it participates in the cultural resilience of the Eezham context. By blending the raw, atmospheric tension of independent cinema with the deep-rooted oral traditions of his heritage, he creates a cinematic language that is both hyper-local and universally resonant.
+              </p>
+            </div>
           </div>
         </div>
       </section>
