@@ -45,10 +45,10 @@ Swiss-style archival grid for showcasing works, press, or accolades.
 
 ### 4. DataList
 High-density informational listing with scroll-triggered unveils.
-- **Purpose**: Biographies, press mentions, awards, or technical data.
+- **Purpose**: Biographies, press mentions, or technical data.
 - **Usage**:
   ```tsx
-  <DataList title="Accolades" items={data} columns={1} />
+  <DataList title="Selected Press" items={data} columns={1} />
   ```
 
 ---
