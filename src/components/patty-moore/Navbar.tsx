@@ -152,7 +152,7 @@ export const Navbar: React.FC = () => {
       >
         <Link
           href="/"
-          className="relative h-8 sm:h-10 w-32 sm:w-40 transition-transform hover:scale-105 active:scale-95"
+          className="relative h-12 sm:h-20 w-48 sm:w-80 transition-transform hover:scale-105 active:scale-95"
         >
           <Image
             src="/images/Kishanth Logo-01.png"
