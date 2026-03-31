@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 
+import Image from "next/image";
+
 interface NavLinkProps {
   href: string;
   label: string;
@@ -150,9 +152,15 @@ export const Navbar: React.FC = () => {
       >
         <Link
           href="/"
-          className="text-xs uppercase tracking-[0.5em] font-black text-foreground"
+          className="relative h-8 sm:h-10 w-32 sm:w-40 transition-transform hover:scale-105 active:scale-95"
         >
-          ILANTHIRAIYAN
+          <Image
+            src="/images/Kishanth Logo-01.png"
+            alt="Ilanthiraiyan Logo"
+            fill
+            className="object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Links + Toggle */}
