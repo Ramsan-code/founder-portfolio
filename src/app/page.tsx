@@ -13,7 +13,7 @@ export default function Home() {
         <section className="flex flex-col justify-center px-6 sm:px-16 z-20">
           <HeroTypography 
             text="ILANTHIRAIYAN" 
-            subtitle="FILMMAKER // STORYTELLER // CATALYST"
+            subtitle="FILMMAKER // STORYTELLER // CATALYST for Eezham Cinema "
             className="min-h-0 pt-24 pb-20 sm:pt-16 sm:pb-0"
           />
         </section>
