@@ -42,12 +42,16 @@ export default function ContactPage() {
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        // FIX: Ensure errorMessage is a string (prevents React Error #31)
+        const errorText = typeof data.error === 'string' 
+          ? data.error 
+          : data.error?.message || "Something went wrong. Please try again.";
+        setErrorMessage(errorText);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Submission error:", error);
       setStatus("error");
-      setErrorMessage("Network error. Please check your connection.");
+      setErrorMessage("Network error. Please try again later.");
     }
   };
 
