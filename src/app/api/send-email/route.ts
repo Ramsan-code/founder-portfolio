@@ -1,15 +1,22 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
+  const apiKey = process.env.RESEND_API_KEY;
+
+  if (!apiKey) {
+    console.error("ERROR: RESEND_API_KEY is missing from environment variables.");
+    return NextResponse.json({ error: { message: "API key is not configured in Vercel settings." } }, { status: 500 });
+  }
+
+  const resend = new Resend(apiKey);
+
   try {
     const { name, email, message } = await request.json();
 
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio <onboarding@resend.dev>',
-      to: ['Ilanthiraiyanfilm@gmail.com'], // The email from the contact page
+      from: 'onboarding@resend.dev', // Simplified 'from' for best compatibility
+      to: 'Ilanthiraiyanfilm@gmail.com',  // Single recipient is more reliable for free tier
       subject: `New Collaboration Inquiry from ${name}`,
       replyTo: email,
       html: `
@@ -29,11 +36,13 @@ export async function POST(request: Request) {
     });
 
     if (error) {
+      console.error("Resend API Error:", error);
       return NextResponse.json({ error }, { status: 400 });
     }
 
     return NextResponse.json({ data });
   } catch (error) {
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    console.error("Internal Server Error:", error);
+    return NextResponse.json({ error: { message: 'Internal Server Error' } }, { status: 500 });
   }
 }
