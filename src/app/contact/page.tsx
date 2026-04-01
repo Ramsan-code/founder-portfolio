@@ -56,16 +56,16 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-foreground selection:text-background cursor-crosshair transition-colors duration-500">
+    <main className="relative h-screen bg-background text-foreground overflow-hidden selection:bg-foreground selection:text-background cursor-crosshair transition-colors duration-500">
       <Navbar />
 
-      <div className="pt-20 grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
         {/* Left Side: Cinematic Form */}
-        <section className="flex flex-col justify-center px-6 sm:px-16 z-20 pb-20 lg:pb-0">
+        <section className="flex flex-col justify-center px-6 sm:px-16 z-20 pt-20 lg:pt-0 h-full overflow-y-auto lg:overflow-hidden">
           <HeroTypography
             text="GET IN TOUCH"
             subtitle="LET'S CREATE TOGETHER"
-            className="min-h-0 pt-16 pb-8 sm:pb-12"
+            className="min-h-0 pt-8 sm:pt-16 pb-8 sm:pb-12"
           />
 
           <motion.form
@@ -73,9 +73,9 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 1 }}
             onSubmit={handleSubmit}
-            className="w-full max-w-md space-y-8 sm:space-y-12 px-4 sm:px-0"
+            className="w-full max-w-md space-y-6 sm:space-y-10 px-4 sm:px-0"
           >
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-2 sm:space-y-3">
               <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-70">
                 Your Name
               </label>
@@ -85,12 +85,12 @@ export default function ContactPage() {
                 value={formData.user_name}
                 onChange={handleChange}
                 required
-                className="bg-transparent border-b border-foreground/10 py-3 sm:py-4 text-lg sm:text-2xl font-bold tracking-tight focus:border-foreground outline-none transition-colors w-full"
+                className="bg-transparent border-b border-foreground/10 py-2 sm:py-4 text-lg sm:text-2xl font-bold tracking-tight focus:border-foreground outline-none transition-colors w-full"
                 placeholder="..."
               />
             </div>
 
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-2 sm:space-y-3">
               <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-70">
                 Your Email Address
               </label>
@@ -100,12 +100,12 @@ export default function ContactPage() {
                 value={formData.user_email}
                 onChange={handleChange}
                 required
-                className="bg-transparent border-b border-foreground/10 py-3 sm:py-4 text-base sm:text-xl font-bold tracking-tight focus:border-foreground outline-none transition-colors w-full"
+                className="bg-transparent border-b border-foreground/10 py-2 sm:py-4 text-base sm:text-xl font-bold tracking-tight focus:border-foreground outline-none transition-colors w-full"
                 placeholder="name@organization.com"
               />
             </div>
 
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-2 sm:space-y-3">
               <label className="text-[10px] uppercase tracking-[0.5em] font-black opacity-70">
                 Message
               </label>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="bg-transparent border-b border-foreground/10 py-3 sm:py-4 text-lg sm:text-xl font-bold tracking-tight focus:border-foreground outline-none transition-colors min-h-[100px] resize-none w-full"
+                className="bg-transparent border-b border-foreground/10 py-2 sm:py-4 text-lg sm:text-xl font-bold tracking-tight focus:border-foreground outline-none transition-colors min-h-[80px] sm:min-h-[100px] resize-none w-full"
                 placeholder="..."
               />
             </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className={`text-xs sm:text-sm uppercase tracking-[0.5em] sm:tracking-[1em] font-black transition-opacity ${
+                className={`text-[10px] sm:text-xs uppercase tracking-[0.5em] sm:tracking-[1em] font-black transition-opacity text-left ${
                   status === "loading" ? "opacity-50 cursor-not-allowed" : "hover:opacity-50"
                 }`}
               >
@@ -155,12 +155,12 @@ export default function ContactPage() {
             </div>
           </motion.form>
 
-          {/* Atmospheric Baseline — appeared below form on mobile, absolute on desktop */}
-          <div className="mt-16 lg:hidden flex flex-col space-y-8 opacity-30 px-4 pb-12">
+          {/* Atmospheric Baseline — mobile only, fits in scrollable area */}
+          <div className="mt-12 lg:hidden flex flex-col space-y-6 opacity-30 px-4 pb-12">
             <div className="flex flex-col space-y-2">
               <span className="text-[8px] uppercase tracking-[0.5em] font-bold">Location / இடம்</span>
               <p className="text-[10px] uppercase tracking-[0.3em] font-medium leading-relaxed">
-                Vavuniya,<br />Sri Lanka
+                Vavuniya, Sri Lanka
               </p>
             </div>
             <div className="flex flex-col space-y-2">
@@ -173,7 +173,7 @@ export default function ContactPage() {
         </section>
 
         {/* Right Side: Cinematic Image */}
-        <section className="relative h-[40vh] lg:h-screen w-full overflow-hidden opacity-40 order-first lg:order-last">
+        <section className="relative h-[30vh] lg:h-full w-full overflow-hidden opacity-40 order-first lg:order-last">
           <Image
             src="/images/work-3.png"
             alt="Director vision"
