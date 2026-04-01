@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
-      to: 'shankishan2212@gmail.com', // Your successful recipient
+      to: 'ilanthiraiyanfilm@gmail.com', // Reverted to the authorized email for this account
       subject: `New Inquiry from ${user_name}`,
       replyTo: user_email,
       html: `
