@@ -8,8 +8,8 @@ import Image from "next/image";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -36,13 +36,13 @@ export default function ContactPage() {
 
       const data = await response.json();
 
-      if (response.ok) {
+      if (response.ok && data.success) {
         setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ user_name: "", user_email: "", message: "" });
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
-        setErrorMessage(data.error?.message || "Something went wrong. Please try again.");
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -77,8 +77,8 @@ export default function ContactPage() {
               </label>
               <input
                 type="text"
-                name="name"
-                value={formData.name}
+                name="user_name"
+                value={formData.user_name}
                 onChange={handleChange}
                 required
                 className="bg-transparent border-b border-foreground/10 py-3 sm:py-4 text-lg sm:text-2xl font-bold tracking-tight focus:border-foreground outline-none transition-colors w-full"
@@ -92,8 +92,8 @@ export default function ContactPage() {
               </label>
               <input
                 type="email"
-                name="email"
-                value={formData.email}
+                name="user_email"
+                value={formData.user_email}
                 onChange={handleChange}
                 required
                 className="bg-transparent border-b border-foreground/10 py-3 sm:py-4 text-base sm:text-xl font-bold tracking-tight focus:border-foreground outline-none transition-colors w-full"
