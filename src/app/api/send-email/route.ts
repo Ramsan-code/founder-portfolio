@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     const { name, email, message } = await request.json();
 
     const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev', // Simplified 'from' for best compatibility
+      from: 'Contact Form <onboarding@resend.dev>', // Simplified 'from' for best compatibility
       to: 'Ilanthiraiyanfilm@gmail.com',  // Single recipient is more reliable for free tier
       subject: `New Collaboration Inquiry from ${name}`,
       replyTo: email,
