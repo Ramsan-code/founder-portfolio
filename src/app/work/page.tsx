@@ -44,21 +44,18 @@ export default function WorkPage() {
       aspectRatio: "video" as const,
     },
     {
-      title: "Archive of Visions", // --- [CHANGE: Added new requested YouTube URL] ---
+      title: "Archive of Visions", 
       metadata: "Experimental Documentary / 2024",
       imageSrc: "/images/work-1.png",
       youtubeUrl: "https://youtu.be/GBalcsbWodw?si=cTgBe8VXTmiftZ2M",
       aspectRatio: "video" as const,
     },
-  ];
-
-  const shorts = [
     {
-      title: "Impact of Cinema Camping", // --- [CHANGE: Added requested YouTube Short] ---
-      metadata: "Shorts / 2024 / Mentorship",
-      imageSrc: "/images/work-3.png",
-      youtubeUrl: "https://youtube.com/shorts/JnJAfZEew5Y",
-      aspectRatio: "portrait" as const,
+      title: "Visions of Resilience", // --- [CHANGE: Added new requested YouTube URL] ---
+      metadata: "Experimental Film / 2024 / Artistic",
+      imageSrc: "/images/work-2.png",
+      youtubeUrl: "https://youtu.be/_1Mv7PmYSQo?si=hEzcLBhUqYGjUpo7", 
+      aspectRatio: "video" as const,
     },
   ];
 

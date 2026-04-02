@@ -110,9 +110,13 @@ export const GridItem: React.FC<GridItemProps> = ({
         </p>
 
         {description && (
-          <p className="text-[9px] opacity-30 line-clamp-2 italic font-light mt-2">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            className="text-[10px] sm:text-[11px] leading-relaxed line-clamp-3 italic font-light mt-3 group-hover:opacity-60 transition-opacity duration-700"
+          >
             {description}
-          </p>
+          </motion.p>
         )}
       </div>
     </motion.div>
