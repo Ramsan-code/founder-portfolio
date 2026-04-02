@@ -31,6 +31,7 @@ export const GridItem: React.FC<GridItemProps> = ({
 }) => {
   const [thumbUrl, setThumbUrl] = useState<string | null>(null);
   const [description, setDescription] = useState<string | null>(null);
+  const [dynamicTitle, setDynamicTitle] = useState<string | null>(null);
 
   const videoId = youtubeUrl ? getYouTubeID(youtubeUrl) : null;
 
@@ -58,6 +59,9 @@ export const GridItem: React.FC<GridItemProps> = ({
           const data = await response.json();
           if (data.description) {
             setDescription(data.description);
+          }
+          if (data.title) {
+            setDynamicTitle(data.title);
           }
         } catch (error) {
           console.error("Error fetching YouTube details:", error);
@@ -103,7 +107,7 @@ export const GridItem: React.FC<GridItemProps> = ({
       
       <div className="flex flex-col space-y-2">
         <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-foreground/90">
-          {title}
+          {dynamicTitle || title}
         </h3>
         <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] opacity-40 leading-relaxed font-medium">
           {metadata}
