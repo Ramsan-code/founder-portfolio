@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { DataList } from "@/components/patty-moore/DataList";
 import { Navbar } from "@/components/patty-moore/Navbar";
 import { HeroTypography } from "@/components/patty-moore/HeroTypography";
+import { GridItem } from "@/components/patty-moore/GridGallery";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -30,7 +33,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-white text-black dark:bg-charcoal dark:text-off-white transition-colors duration-500 selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
       <Navbar />
 
-      {/* Hero — theme-aware: white/black in light, charcoal/white in dark */}
+      {/* Hero */}
       <section className="min-h-[40vh] flex flex-col justify-center transition-colors duration-500">
         <HeroTypography
           text="THE VISIONARY"
@@ -42,7 +45,7 @@ export default function AboutPage() {
       {/* Bio Section with Portrait */}
       <section className="px-6 sm:px-12 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch max-w-7xl mx-auto">
-          {/* Left Side: Portrait — More prominent */}
+          {/* Left Side: Portrait */}
           <div className="relative w-full min-h-[500px] lg:min-h-[800px] overflow-hidden rounded-sm grayscale contrast-[1.1]">
             <Image
               src="/images/patty_moore_portrait.png"
@@ -61,28 +64,50 @@ export default function AboutPage() {
             </p>
             <div className="space-y-8">
               <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
-                Ilanthiraiyan is a filmmaker rooted in the soil of Vavuniya, Sri Lanka, whose work serves as a vital bridge between the historical narratives of the Tamil people and the expansive possibilities of modern cinema. His journey is defined by a dual commitment: the pursuit of artistic excellence and the necessity of community building. 
+                Ilanthiraiyan is a filmmaker rooted in the soil of Vavuniya, Sri Lanka, whose work serves as a vital bridge between the historical narratives of the Tamil people and the expansive possibilities of modern cinema.
               </p>
               <p className="text-sm sm:text-base opacity-60 leading-[1.8] font-light">
-                Growing up in a landscape rich with untold stories, he recognized early on that cinema is the most potent mirror for a community’s identity. His work does not merely observe; it participates in the cultural resilience of the Eezham context. By blending the raw, atmospheric tension of independent cinema with the deep-rooted oral traditions of his heritage, he creates a cinematic language that is both hyper-local and universally resonant.
+                By blending the raw, atmospheric tension of independent cinema with the deep-rooted oral traditions of his heritage, he creates a cinematic language that is both hyper-local and universally resonant.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Thin divider line instead of animated block */}
+      {/* Thin divider line */}
       <div className="w-full border-t border-black/10 dark:border-white/10" />
 
-      {/* Narrative Pillars */}
+      {/* Narrative Pillars + YouTube Short Integration */}
       <section className="py-32 px-6 sm:px-12 transition-colors duration-500">
-        <div className="max-w-4xl">
-          <DataList
-            title="Narrative Pillars"
-            items={infoData}
-            columns={1}
-            className="p-0"
-          />
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+          
+          {/* Pillars List (Left 8 columns) */}
+          <div className="lg:col-span-8">
+            <DataList
+              title="Narrative Pillars / தூண்கள்"
+              items={infoData}
+              columns={1}
+              className="p-0"
+            />
+          </div>
+
+          {/* Featured YouTube Short (Right 4 columns) */}
+          <div className="lg:col-span-4 flex flex-col space-y-8 lg:sticky lg:top-32">
+             <div className="flex flex-col space-y-2">
+                <span className="text-[10px] uppercase tracking-[0.6em] font-black opacity-30">Field Report / நேரடி அறிக்கை</span>
+                <h3 className="text-xl font-bold uppercase tracking-tighter">Impact in Motion</h3>
+             </div>
+             
+             <div className="max-w-[320px] mx-auto lg:mx-0">
+                <GridItem 
+                   title="Cinema Camping Shorts"
+                   metadata="Mentorship / 2024"
+                   imageSrc="/images/work-3.png"
+                   youtubeUrl="https://youtube.com/shorts/JnJAfZEew5Y"
+                   aspectRatio="portrait"
+                />
+             </div>
+          </div>
         </div>
       </section>
 

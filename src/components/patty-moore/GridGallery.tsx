@@ -7,13 +7,13 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 import { getYouTubeID } from "@/lib/youtube";
 
-interface GridItemProps {
+export interface GridItemProps {
   title: string;
   metadata: string;
   imageSrc: string;
   youtubeUrl?: string; // --- [CHANGE: Added optional YouTube URL] ---
   className?: string;
-  aspectRatio?: "video" | "square" | "wide";
+  aspectRatio?: "video" | "square" | "wide" | "portrait";
 }
 
 interface GridGalleryProps {
@@ -21,7 +21,7 @@ interface GridGalleryProps {
   className?: string;
 }
 
-const GridItem: React.FC<GridItemProps> = ({ 
+export const GridItem: React.FC<GridItemProps> = ({ 
   title, 
   metadata, 
   imageSrc, 
@@ -71,7 +71,8 @@ const GridItem: React.FC<GridItemProps> = ({
   const aspectClass = {
     video: "aspect-video",
     square: "aspect-square",
-    wide: "aspect-[21/9]"
+    wide: "aspect-[21/9]",
+    portrait: "aspect-[9/16]"
   }[aspectRatio];
 
   const itemContent = (
