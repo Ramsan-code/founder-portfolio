@@ -178,9 +178,10 @@ export default function ContactPage() {
             src="/images/work-3.png"
             alt="Director vision"
             fill
+            unoptimized
+            priority
             className="object-cover grayscale brightness-50"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent hidden lg:block" />
         </section>
