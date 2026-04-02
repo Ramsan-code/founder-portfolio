@@ -47,11 +47,14 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  // --- [CHANGE: Handle Channel Icon Fetching] ---
-  if (handle && apiKey) {
+  // --- [CHANGE: Handle Channel Icon Fetching via Handle or ID] ---
+  const channelId = searchParams.get('channelId');
+
+  if ((handle || channelId) && apiKey) {
     try {
+      const queryParam = handle ? `forHandle=${handle}` : `id=${channelId}`;
       const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/channels?part=snippet&forHandle=${handle}&key=${apiKey}`
+        `https://www.googleapis.com/youtube/v3/channels?part=snippet&${queryParam}&key=${apiKey}`
       );
       const data = await response.json();
       if (data.items && data.items.length > 0) {
@@ -65,5 +68,5 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  return NextResponse.json({ error: 'ID or Handle required' }, { status: 400 });
+  return NextResponse.json({ error: 'ID, Handle, or ChannelId required' }, { status: 400 });
 }

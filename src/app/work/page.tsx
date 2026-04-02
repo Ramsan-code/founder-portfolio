@@ -13,6 +13,13 @@ export default function WorkPage() {
       aspectRatio: "video" as const,
     },
     {
+      title: "Resilience through Art", // --- [CHANGE: Added new requested YouTube URL] ---
+      metadata: "Conversations / 2024 / Cultural",
+      imageSrc: "/images/work-3.png",
+      youtubeUrl: "https://youtu.be/tDV-N9grDqQ?si=rQ5WfkkwB903sAcW",
+      aspectRatio: "video" as const,
+    },
+    {
       title: "Vision of Thiraippaasarai", // --- [CHANGE: Added new requested YouTube URL] ---
       metadata: "Short Film / 2024 / Documentary",
       imageSrc: "/images/work-1.png",
@@ -28,6 +35,7 @@ export default function WorkPage() {
       youtubeUrl: "https://youtu.be/e3CateLfoD0?si=STEofE5krakoyE99",
       aspectRatio: "video" as const,
     },
+
     {
       title: "Thiraippaasarai Hub",
       metadata: "Documentary / 2023 / Cultural",
@@ -44,17 +52,24 @@ export default function WorkPage() {
       aspectRatio: "video" as const,
     },
     {
-      title: "Archive of Visions", 
+      title: "Archive of Visions",
       metadata: "Experimental Documentary / 2024",
       imageSrc: "/images/work-1.png",
       youtubeUrl: "https://youtu.be/GBalcsbWodw?si=cTgBe8VXTmiftZ2M",
       aspectRatio: "video" as const,
     },
     {
-      title: "Visions of Resilience", // --- [CHANGE: Added new requested YouTube URL] ---
+      title: "Visions of Resilience",
       metadata: "Experimental Film / 2024 / Artistic",
       imageSrc: "/images/work-2.png",
-      youtubeUrl: "https://youtu.be/_1Mv7PmYSQo?si=hEzcLBhUqYGjUpo7", 
+      youtubeUrl: "https://youtu.be/_1Mv7PmYSQo?si=hEzcLBhUqYGjUpo7",
+      aspectRatio: "video" as const,
+    },
+    {
+      title: "Cultural Movement", // --- [CHANGE: Added new requested YouTube URL] ---
+      metadata: "Documentary Short / 2024 / Empowerment",
+      imageSrc: "/images/work-3.png",
+      youtubeUrl: "https://youtu.be/emiLZXaQtwY?si=fj8TYvQv5x7TQlO6", 
       aspectRatio: "video" as const,
     },
   ];

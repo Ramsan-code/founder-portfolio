@@ -57,7 +57,6 @@ const ThemeToggle: React.FC = () => {
           : "bg-black/10 border-black/20"
       )}
     >
-      {/* Moon icon — left side */}
       <Moon
         size={11}
         className={cn(
@@ -65,7 +64,6 @@ const ThemeToggle: React.FC = () => {
           isDark ? "opacity-70" : "opacity-20"
         )}
       />
-      {/* Sun icon — right side */}
       <Sun
         size={11}
         className={cn(
@@ -73,7 +71,6 @@ const ThemeToggle: React.FC = () => {
           isDark ? "opacity-20" : "opacity-70"
         )}
       />
-      {/* Sliding thumb */}
       <motion.div
         layout
         transition={{ type: "spring", stiffness: 500, damping: 35 }}
@@ -86,13 +83,14 @@ const ThemeToggle: React.FC = () => {
   );
 };
 
-const ChannelIcon: React.FC<{ handle: string }> = ({ handle }) => {
+const ChannelIcon: React.FC<{ handle?: string; channelId?: string }> = ({ handle, channelId }) => {
   const [iconUrl, setIconUrl] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchIcon = async () => {
       try {
-        const res = await fetch(`/api/youtube?handle=${handle}`);
+        const query = handle ? `handle=${handle}` : `channelId=${channelId}`;
+        const res = await fetch(`/api/youtube?${query}`);
         const data = await res.json();
         if (data.icon) setIconUrl(data.icon);
       } catch (e) {
@@ -100,7 +98,7 @@ const ChannelIcon: React.FC<{ handle: string }> = ({ handle }) => {
       }
     };
     fetchIcon();
-  }, [handle]);
+  }, [handle, channelId]);
 
   if (!iconUrl) return <Youtube size={18} className="opacity-40" />;
 
@@ -108,7 +106,7 @@ const ChannelIcon: React.FC<{ handle: string }> = ({ handle }) => {
     <div className="relative w-5 h-5 rounded-full overflow-hidden border border-foreground/10 grayscale hover:grayscale-0 transition-all">
        <Image 
           src={iconUrl} 
-          alt={handle}
+          alt="Channel Icon"
           fill
           className="object-cover"
        />
@@ -133,6 +131,12 @@ export const Navbar: React.FC = () => {
     { href: "/contact", label: "Contact" },
   ];
 
+  const channels = [
+    { name: "NewBorn", url: "https://youtube.com/@thenewborn2589", handle: "thenewborn2589" },
+    { name: "Freedom Theatre", url: "https://youtube.com/@arangalayafreedomtheatre", handle: "arangalayafreedomtheatre" },
+    { name: "Personal", url: "https://youtube.com/channel/UCHSlWChso_rbAk4mxXdIllg", channelId: "UCHSlWChso_rbAk4mxXdIllg" },
+  ];
+
   return (
     <>
       <AnimatePresence>
@@ -143,16 +147,14 @@ export const Navbar: React.FC = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-[#F0F2F5] dark:bg-[#222222] flex flex-col items-center justify-center space-y-10 md:hidden px-6"
           >
-            {/* Close Button in Overlay */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-8 right-6 sm:right-12 text-foreground p-2"
+              className="absolute top-8 right-6 text-foreground p-2"
               aria-label="Close menu"
             >
               <X size={24} />
             </button>
 
-            {/* Menu Links */}
             <div className="flex flex-col items-center space-y-8">
               {links.map((link) => (
                 <NavLink
@@ -164,7 +166,6 @@ export const Navbar: React.FC = () => {
               ))}
             </div>
 
-            {/* Optional: Theme Toggle at bottom of mobile menu */}
             <div className="pt-10 flex flex-col items-center">
               <span className="text-[10px] uppercase tracking-[0.4em] opacity-40 font-bold mb-4 block text-center">Appearance</span>
               <ThemeToggle />
@@ -185,56 +186,42 @@ export const Navbar: React.FC = () => {
         >
           <Image
             src="/images/Kishanth Logo-01.png"
-            alt="Ilanthiraiyan Logo"
+            alt="Logo"
             fill
             className="object-contain dark:mix-blend-normal mix-blend-multiply transition-colors"
             priority
           />
         </Link>
 
-        {/* Desktop Links + Toggle + Socials */}
         <div className="hidden md:flex items-center space-x-10">
           {links.map((link) => (
             <NavLink key={link.href} {...link} />
           ))}
           
           <div className="flex items-center space-x-6 border-l border-foreground/10 pl-10">
-             {/* --- [CHANGE: Original YouTube Channel Icon 1: The NewBorn] --- */}
-             <a 
-               href="https://youtube.com/@thenewborn2589?si=qvZ7n2vVGvsx7J_4" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               className="transition-opacity hover:opacity-100"
-               aria-label="NewBorn Cinema YouTube Channel"
-             >
-               <ChannelIcon handle="thenewborn2589" />
-             </a>
-
-             {/* --- [CHANGE: Original YouTube Channel Icon 2: Freedom Theatre] --- */}
-             <a 
-               href="https://youtube.com/@arangalayafreedomtheatre?si=Aip0U3JZkq8RlWvf" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               className="transition-opacity hover:opacity-100"
-               aria-label="Arangalaya Freedom Theatre YouTube Channel"
-             >
-               <ChannelIcon handle="arangalayafreedomtheatre" />
-             </a>
-
+             {channels.map((ch) => (
+               <a 
+                 key={ch.name}
+                 href={ch.url} 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="transition-opacity hover:opacity-100"
+                 aria-label={ch.name}
+               >
+                 <ChannelIcon handle={ch.handle} channelId={ch.channelId} />
+               </a>
+             ))}
              <ThemeToggle />
           </div>
         </div>
 
-        {/* Mobile: Toggle + Hamburger */}
         <div className="md:hidden flex items-center space-x-6">
-          {/* --- [CHANGE: Mobile Original Channel Icons] --- */}
           <div className="flex items-center space-x-5">
-             <a href="https://youtube.com/@thenewborn2589" target="_blank" rel="noopener noreferrer">
-                <ChannelIcon handle="thenewborn2589" />
-             </a>
-             <a href="https://youtube.com/@arangalayafreedomtheatre" target="_blank" rel="noopener noreferrer">
-                <ChannelIcon handle="arangalayafreedomtheatre" />
-             </a>
+             {channels.map((ch) => (
+               <a key={ch.name} href={ch.url} target="_blank" rel="noopener noreferrer" aria-label={ch.name}>
+                  <ChannelIcon handle={ch.handle} channelId={ch.channelId} />
+               </a>
+             ))}
           </div>
           <ThemeToggle />
           <button
