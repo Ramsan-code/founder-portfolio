@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Youtube } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import Image from "next/image";
@@ -86,6 +86,36 @@ const ThemeToggle: React.FC = () => {
   );
 };
 
+const ChannelIcon: React.FC<{ handle: string }> = ({ handle }) => {
+  const [iconUrl, setIconUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchIcon = async () => {
+      try {
+        const res = await fetch(`/api/youtube?handle=${handle}`);
+        const data = await res.json();
+        if (data.icon) setIconUrl(data.icon);
+      } catch (e) {
+        console.error("Icon fetch error:", e);
+      }
+    };
+    fetchIcon();
+  }, [handle]);
+
+  if (!iconUrl) return <Youtube size={18} className="opacity-40" />;
+
+  return (
+    <div className="relative w-5 h-5 rounded-full overflow-hidden border border-foreground/10 grayscale hover:grayscale-0 transition-all">
+       <Image 
+          src={iconUrl} 
+          alt={handle}
+          fill
+          className="object-cover"
+       />
+    </div>
+  );
+};
+
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -162,16 +192,50 @@ export const Navbar: React.FC = () => {
           />
         </Link>
 
-        {/* Desktop Links + Toggle */}
+        {/* Desktop Links + Toggle + Socials */}
         <div className="hidden md:flex items-center space-x-10">
           {links.map((link) => (
             <NavLink key={link.href} {...link} />
           ))}
-          <ThemeToggle />
+          
+          <div className="flex items-center space-x-6 border-l border-foreground/10 pl-10">
+             {/* --- [CHANGE: Original YouTube Channel Icon 1: The NewBorn] --- */}
+             <a 
+               href="https://youtube.com/@thenewborn2589?si=qvZ7n2vVGvsx7J_4" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="transition-opacity hover:opacity-100"
+               aria-label="NewBorn Cinema YouTube Channel"
+             >
+               <ChannelIcon handle="thenewborn2589" />
+             </a>
+
+             {/* --- [CHANGE: Original YouTube Channel Icon 2: Freedom Theatre] --- */}
+             <a 
+               href="https://youtube.com/@arangalayafreedomtheatre?si=Aip0U3JZkq8RlWvf" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="transition-opacity hover:opacity-100"
+               aria-label="Arangalaya Freedom Theatre YouTube Channel"
+             >
+               <ChannelIcon handle="arangalayafreedomtheatre" />
+             </a>
+
+             <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile: Toggle + Hamburger */}
-        <div className="md:hidden flex items-center space-x-8">
+        <div className="md:hidden flex items-center space-x-6">
+          {/* --- [CHANGE: Mobile Original Channel Icons] --- */}
+          <div className="flex items-center space-x-5">
+             <a href="https://youtube.com/@thenewborn2589" target="_blank" rel="noopener noreferrer">
+                <ChannelIcon handle="thenewborn2589" />
+             </a>
+             <a href="https://youtube.com/@arangalayafreedomtheatre" target="_blank" rel="noopener noreferrer">
+                <ChannelIcon handle="arangalayafreedomtheatre" />
+             </a>
+          </div>
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
